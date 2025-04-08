@@ -1,12 +1,12 @@
 # 🚦 Async Traffic Light (SwiftUI)
 
-Este es un pequeño proyecto en SwiftUI que simula un semáforo utilizando asincronía con `Task.sleep`.
+This is a small SwiftUI project that simulates a traffic light using asynchronous logic with `Task.sleep`.
 
-## 🧠 Conceptos clave
-- Uso de `@State` para controlar el estado de la luz activa.
-- Componentización con `LampView`.
-- Ciclo asincrónico de luces usando `Swift Concurrency`.
-- Animación con `.easeInOut`.
+## 🧠 Key Concepts
+- Use of `@State` to control the active light state.
+- Component-based structure with `LampView`.
+- Asynchronous light cycle using `Swift Concurrency`.
+- Smooth animations with `.easeInOut`.
 
-## 📸 Vista previa
+## 📸 Preview
 [![temp-Imagev5p-PCm.avif](https://i.postimg.cc/Rhy8VXcY/temp-Imagev5p-PCm.avif)](https://postimg.cc/ZvPjwPsP)
