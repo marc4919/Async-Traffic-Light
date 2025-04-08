@@ -28,24 +28,24 @@ struct TrafficLightView: View {
             Color.black
                 .frame(width: 30, height: 120)
         }
-        .onAppear(perform: startSemaforoTimer)
+        .task {
+            await startTrafficLightTimer()
+        }
 
         
     }
     
-    private func startSemaforoTimer() {
-        Task {
-            while true {
-                try? await Task.sleep(for: .seconds(1))
-                await MainActor.run {
-                    switch activeLight {
-                    case .red:
-                        activeLight = .yellow
-                    case .yellow:
-                        activeLight = .green
-                    case .green:
-                        activeLight = .red
-                    }
+    private func startTrafficLightTimer() async {
+        while true {
+            try? await Task.sleep(for: .seconds(1))
+            await MainActor.run {
+                switch activeLight {
+                case .red:
+                    activeLight = .yellow
+                case .yellow:
+                    activeLight = .green
+                case .green:
+                    activeLight = .red
                 }
             }
         }
