@@ -31,22 +31,20 @@ struct TrafficLightView: View {
         .task {
             await startTrafficLightTimer()
         }
-
+        
         
     }
     
     private func startTrafficLightTimer() async {
         while true {
             try? await Task.sleep(for: .seconds(1))
-            await MainActor.run {
-                switch activeLight {
-                case .red:
-                    activeLight = .yellow
-                case .yellow:
-                    activeLight = .green
-                case .green:
-                    activeLight = .red
-                }
+            switch activeLight {
+            case .red:
+                activeLight = .yellow
+            case .yellow:
+                activeLight = .green
+            case .green:
+                activeLight = .red
             }
         }
     }
